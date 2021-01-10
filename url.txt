@@ -1,0 +1,5 @@
+・各バージョンの設定ファイルの置き場所
+https://unpkg.com/browse/mermaid@8.8.4/dist/
+
+・URLでmermaid.min.jsを設定する場合の取得先
+https://unpkg.com/mermaid/dist/mermaid.min.js
