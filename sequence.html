@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+</head>
+<body>
+  <div class="mermaid">
+    sequenceDiagram
+      # エイリアス(左から順番に生成)
+      participant func1 as 機能A
+      participant func2 as 機能B
+      participant func3 as 機能C
+
+      func1 ->>+ func2 : 要求1
+      func2 ->>+ func3 : 要求2
+      func3 -->>- func2 : 要求2結果
+      func2 -->>- func1 : 要求1結果
+
+      alt 正常値
+        Note over func1 : 正常処理
+      else 異常値
+        Note over func1 : 異常処理
+      end
+
+      func1  ->> func2: 実線矢印
+      func2 -->> func1 : 破線矢印
+      func1  -> func2: 矢印なし実線
+      func2 --> func1 : 矢印なし破線
+      func1  -x func2: バツ付き実線
+      func2 --x func1 : バツ付き破線
+
+      func2 ->>+ func3: 要求3
+      func3 -->>- func2: 要求3結果
+      func2 ->>+ func3: 要求4
+      func3 ->>+ func3: 要求5
+      func3 -->>- func3: 要求6
+      func3 -->>- func2: 要求4結果
+
+      loop 繰り返し条件
+          func1 ->> func2: 繰り返し処理
+      end
+
+      opt 一致条件
+          func2 ->> func3: 一致の場合の処理
+      end
+
+      Note over func1 : アクタ上の注釈
+      Note left of func1: アクタの左側の注釈
+      Note right of func1: アクタの右側の注釈<br>改行あり
+      Note over func1, func2: 2つのアクタ上の注釈
+      Note over func1, func3: ３つのアクタ上の注釈
+
+  </div>
+  <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+  <script>mermaid.initialize({startOnLoad:true});</script>
+</body>
+</html>
