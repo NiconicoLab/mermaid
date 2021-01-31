@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+</head>
+<body>
+  <div class="mermaid">
+    gantt
+        dateFormat  YYYY-MM-DD
+        title Gantt Chart
+        section Project A
+        task1           :done,    des1, 2021-01-06,2021-01-08
+        task2           :active,  des2, 2021-01-09, 3d
+        task3           :             des3, after des2, 5d
+        task4           :             des4, after des3, 5d
+        section Project B
+        task1           :crit, done, 2021-01-06,24h
+        task2           :crit, active, 3d
+        task3           :crit, done, after des1, 2d
+        task4           :2d
+        task5           :crit, 2d
+        task6           :4d
+  </div>
+  <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+  <script>mermaid.initialize({startOnLoad:true});</script>
+</body>
+</html>
